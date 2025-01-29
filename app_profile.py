@@ -41,58 +41,58 @@ st.write("Learn more about my research group by following the link below:")
 st.link_button("Research Group webste", 'https://biophysicsup.netlify.app/research/')
 
 # Add a section for publications
-st.header("Publications")
-uploaded_file = st.file_uploader("Upload a CSV of Publications", type="csv")
+#st.header("Publications")
+#uploaded_file = st.file_uploader("Upload a CSV of Publications", type="csv")
 
-if uploaded_file:
-    publications = pd.read_csv(uploaded_file)
-    st.dataframe(publications)
+#if uploaded_file:
+    #publications = pd.read_csv(uploaded_file)
+    #st.dataframe(publications)
 
     # Add filtering for year or keyword
-    keyword = st.text_input("Filter by keyword", "")
-    if keyword:
-        filtered = publications[
-            publications.apply(lambda row: keyword.lower() in row.astype(str).str.lower().values, axis=1)
-        ]
-        st.write(f"Filtered Results for '{keyword}':")
-        st.dataframe(filtered)
-    else:
-        st.write("Showing all publications")
+    #keyword = st.text_input("Filter by keyword", "")
+    #if keyword:
+       # filtered = publications[
+            #publications.apply(lambda row: keyword.lower() in row.astype(str).str.lower().values, axis=1)
+        #]
+        #st.write(f"Filtered Results for '{keyword}':")
+        #st.dataframe(filtered)
+    #else:
+        #st.write("Showing all publications")
 
-# Add a section for visualizing publication trends
-st.header("Publication Trends")
-if uploaded_file:
-    if "Year" in publications.columns:
-        year_counts = publications["Year"].value_counts().sort_index()
-        st.bar_chart(year_counts)
-    else:
-        st.write("The CSV does not have a 'Year' column to visualize trends.")
+#Add a section for visualizing publication trends
+#st.header("Publication Trends")
+#if uploaded_file:
+    #if "Year" in publications.columns:
+        #year_counts = publications["Year"].value_counts().sort_index()
+        #st.bar_chart(year_counts)
+   # else:
+        #st.write("The CSV does not have a 'Year' column to visualize trends.")
 
 # Add a contact section
 st.header("Contact Information")
 email = "jane.doe@example.com"
 st.write(f"You can reach {name} at {email}.")
 
-st.header("Coding School instructions")
-st.write("Here I have stored the instructions from Canvas")
-"""
-Basic Inputs for Profile Details:
+#st.header("Coding School instructions")
+#st.write("Here I have stored the instructions from Canvas")
+#"""
+#Basic Inputs for Profile Details:
 
-- The st.text_input() widget lets users enter their name, field of study, and institution. These inputs update the displayed profile dynamically.
+#- The st.text_input() widget lets users enter their name, field of study, and institution. These inputs update the displayed profile dynamically.
 
-Displaying Publications:
+#Displaying Publications:
 
-- The st.file_uploader() widget allows researchers to upload a CSV of their publications. We use Pandas to read the file and display it as a table with st.dataframe().
+#- The st.file_uploader() widget allows researchers to upload a CSV of their publications. We use Pandas to read the file and display it as a table with st.dataframe().
 
-Filtering Publications:
+#Filtering Publications:
 
-- To add interactivity, we let users filter the publications by keyword. The apply() function searches for the keyword across all columns in the DataFrame, making it flexible for various data formats.
+#- To add interactivity, we let users filter the publications by keyword. The apply() function searches for the keyword across all columns in the DataFrame, making it flexible for various data formats.
 
-Visualizing Trends:
+#Visualizing Trends:
 
-- If the uploaded CSV contains a "Year" column, we use Streamlit’s built-in st.bar_chart() to visualize the number of publications per year. This provides a quick way to analyze research output.
+#- If the uploaded CSV contains a "Year" column, we use Streamlit’s built-in st.bar_chart() to visualize the number of publications per year. This provides a quick way to analyze research output.
 
-Contact Information:
+#Contact Information:
 
-- The app ends with a contact section, where researchers can share their email address.
-"""
+#- The app ends with a contact section, where researchers can share their email address.
+#"""
