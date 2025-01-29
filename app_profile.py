@@ -55,6 +55,7 @@ elif menu == "Science communication":
     st.write("I ")
 elif menu == "Contact":
     st.header("Contact Information")
+    name = "Sarah Burnett"
     email = "jane.doe@example.com"
     st.write(f"You can reach {name} at {email}.")
 # Add a section for publications
