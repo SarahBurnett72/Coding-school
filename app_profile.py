@@ -1,10 +1,10 @@
-"""
-Now, let’s build something practical—a Researcher Profile Page. This app will showcase a researcher’s details, including their name, field of study, publications, and an interactive section for exploring their work.
+#"""
+#Now, let’s build something practical—a Researcher Profile Page. This app will showcase a researcher’s details, including their name, field of study, publications, and an interactive section for exploring their work.
 
-Stop the current `app.py` file in your terminal from running by pressing CTRL+C a few times.
+#Stop the current `app.py` file in your terminal from running by pressing CTRL+C a few times.
 
-Now in Spyder create a new app called `app_profile.py`, copy the code below to this file
-"""
+#Now in Spyder create a new app called `app_profile.py`, copy the code below to this file
+#"""
 
 
 import streamlit as st
@@ -13,33 +13,46 @@ import pandas as pd
 # Title of the app
 st.title("Researcher Profile Page")
 
-# Collect basic information
-name = "Sarah Burnett"
-field = "Biophysics"
-institution = "University of Pretoria"
+# Set page title
+st.set_page_config(page_title="Researcher Profile", layout="wide")
 
+# Sidebar Menu
+st.sidebar.title("Navigation")
+menu = st.sidebar.radio(
+    "Go to:",
+    ["Researcher Profile", "What is biophysics?", "Science communication", "Contact"],
+)
 
-# Display basic profile information
-st.header("Researcher Overview")
-col1, col2 = st.columns(2)
+if menu == "Researcher Profile":
+    # Collect basic information
+    name = "Sarah Burnett"
+    field = "Biophysics"
+    institution = "University of Pretoria"
+    
+    
+    # Display basic profile information
+    st.header("Researcher Overview")
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.write(" ")
+        st.write(" ")
+        st.write(f"**Name:** {name}")
+        st.write(f"**Field of Research:** {field}")
+        st.write(f"**Institution:** {institution}")
+    
+    with col2:
+        st.image('6-IMG_8246.jpg', width=250)
 
-with col1:
-    st.write(" ")
-    st.write(" ")
-    st.write(f"**Name:** {name}")
-    st.write(f"**Field of Research:** {field}")
-    st.write(f"**Institution:** {institution}")
+    st.write("Biophysics is a vibrant, interdisciplinary field that brings together scientists from fields such as physics, biology, chemistry, maths, and material science to share their skills and develop new tools for understanding how biology works. Biophysicists study life at every level, from the molecular level up to entire ecosystems. They develop new experimental and computational methods to understand all aspects of biological systems at a fundamental level, solving scientific mysteries in the process. Biophysicists push the scientific envelope to answer questions that have remained unanswered and solve the problems of the future.")
 
-with col2:
-    st.image('6-IMG_8246.jpg', width=250)
-
-#Section for research field
-st.header("Research field")
-st.write("Biophysics is a vibrant, interdisciplinary field that brings together scientists from fields such as physics, biology, chemistry, maths, and material science to share their skills and develop new tools for understanding how biology works. Biophysicists study life at every level, from the molecular level up to entire ecosystems. They develop new experimental and computational methods to understand all aspects of biological systems at a fundamental level, solving scientific mysteries in the process. Biophysicists push the scientific envelope to answer questions that have remained unanswered and solve the problems of the future.")
-st.write("Climate change has caused extreme heat waves to increase in intensity and frequency. This has a severe negative impact on crop yield and therefore food production. My project aims to investigate the growth response of wheat to high temperature stress, using hyperspectral imaging and sun-induced chlorophyll fluorescence, as well as various biological and chemical techniques. I aim to identify the physiological and quantum mechanical mechanisms of the plant’s response to heat stress, as well as plant adaptation strategies to heat waves. This knowledge can be used to inform the development of adaptive cultivation techniques to mitigate yield loss in high temperature conditions. This project is an exciting look into the intersection between physics, biology and chemistry and will investigate the effects of non-trivial physics in the context of a complex biological system.")
-st.write("Learn more about my research group by following the link below:")
-st.link_button("Research Group website", 'https://biophysicsup.netlify.app/research/')
-
+elif menu == "What is biophysics?":
+    st.write("Climate change has caused extreme heat waves to increase in intensity and frequency. This has a severe negative impact on crop yield and therefore food production. My project aims to investigate the growth response of wheat to high temperature stress, using hyperspectral imaging and sun-induced chlorophyll fluorescence, as well as various biological and chemical techniques. I aim to identify the physiological and quantum mechanical mechanisms of the plant’s response to heat stress, as well as plant adaptation strategies to heat waves. This knowledge can be used to inform the development of adaptive cultivation techniques to mitigate yield loss in high temperature conditions. This project is an exciting look into the intersection between physics, biology and chemistry and will investigate the effects of non-trivial physics in the context of a complex biological system.")
+    #Section for research field
+    st.write("Learn more about my research group by following the link below:")
+    st.link_button("Research Group website", 'https://biophysicsup.netlify.app/research/')
+elif menu == "Science communication":
+    st.write("I ")
 # Add a section for publications
 #st.header("Publications")
 #uploaded_file = st.file_uploader("Upload a CSV of Publications", type="csv")
