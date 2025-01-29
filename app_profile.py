@@ -11,7 +11,7 @@ import streamlit as st
 import pandas as pd
 
 # Title of the app
-st.title("Researcher Profile Page")
+#st.title("Researcher Profile Page")
 
 # Set page title
 #st.set_page_config(page_title="Researcher Profile", layout="wide")
