@@ -73,7 +73,8 @@ st.header("Contact Information")
 email = "jane.doe@example.com"
 st.write(f"You can reach {name} at {email}.")
 
-
+st.header("Coding School instructions")
+st.write("Here I have stored the instructions from Canvas")
 """
 Basic Inputs for Profile Details:
 
