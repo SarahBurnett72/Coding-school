@@ -30,8 +30,8 @@ with col1:
     st.write(f"**Field of Research:** {field}")
     st.write(f"**Institution:** {institution}")
 
-#with col2:
-    #st.image('6-IMG_8246.jpg', width=250)
+with col2:
+    st.image('6-IMG_8246.jpg', width=250)
 
 #Section for research field
 st.header("Research field")
