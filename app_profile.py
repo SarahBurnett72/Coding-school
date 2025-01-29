@@ -14,7 +14,7 @@ import pandas as pd
 st.title("Researcher Profile Page")
 
 # Set page title
-st.set_page_config(page_title="Researcher Profile", layout="wide")
+#st.set_page_config(page_title="Researcher Profile", layout="wide")
 
 # Sidebar Menu
 st.sidebar.title("Navigation")
