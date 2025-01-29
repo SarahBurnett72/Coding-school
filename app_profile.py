@@ -56,12 +56,27 @@ elif menu == "What is biophysics?":
 
 
 elif menu == "Science communication":
-    st.write("I ")
+    st.header("Science communication")
+    st.write("I am interested in science communication. As such, I run social media pages for my research group. Visit them below")
+    st.link_button("Instagram", "https://www.instagram.com/biophysics.up/")
+    st.link_button("LinkedIn", "https://www.linkedin.com/company/biophysics-research-group-tuks/")
+    
 elif menu == "Contact":
     st.header("Contact Information")
     name = "Sarah Burnett"
     email = "jane.doe@example.com"
     st.write(f"You can reach {name} at {email}.")
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+#%%
 # Add a section for publications
 #st.header("Publications")
 #uploaded_file = st.file_uploader("Upload a CSV of Publications", type="csv")
