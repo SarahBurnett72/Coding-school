@@ -53,6 +53,10 @@ elif menu == "What is biophysics?":
     st.link_button("Research Group website", 'https://biophysicsup.netlify.app/research/')
 elif menu == "Science communication":
     st.write("I ")
+elif menu == "Contact":
+    st.header("Contact Information")
+    email = "jane.doe@example.com"
+    st.write(f"You can reach {name} at {email}.")
 # Add a section for publications
 #st.header("Publications")
 #uploaded_file = st.file_uploader("Upload a CSV of Publications", type="csv")
@@ -82,9 +86,7 @@ elif menu == "Science communication":
         #st.write("The CSV does not have a 'Year' column to visualize trends.")
 
 # Add a contact section
-st.header("Contact Information")
-email = "jane.doe@example.com"
-st.write(f"You can reach {name} at {email}.")
+
 
 #st.header("Coding School instructions")
 #st.write("Here I have stored the instructions from Canvas")
